@@ -82,21 +82,21 @@ with col1:
     loan = st.selectbox("Personal Loan?", ['no', 'yes', 'unknown'])
 
 with col2:
-    st.header("📞 Campaign Info")
-    # Campaign Details
+    st.header("📞 Contact & Campaign Attributes")
+    # latest contact attributes
     contact = st.selectbox("Contact Type", ['cellular', 'telephone'])
     month = st.selectbox("Last Contact Month", 
         ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])
     day_of_week = st.selectbox("Last Contact Day", ['mon', 'tue', 'wed', 'thu', 'fri'])
-    
     duration = st.number_input("Duration (sec)", min_value=0, value=200, help="Last contact duration in seconds")
+    # previous campaign attributes
     campaign = st.number_input("Number of Contacts", min_value=1, value=1, help="Number of contacts during this campaign")
     pdays = st.number_input("Days since last contact", min_value=0, value=999, help="999 means never contacted")
     previous = st.number_input("Previous Contacts", min_value=0, value=0, help="Number of contacts before this campaign")
     poutcome = st.selectbox("Previous Outcome", ['failure', 'nonexistent', 'success'])
 
 with col3:
-    st.header("📊 Econ. Indicators")
+    st.header("📊 Socio-Economic Indicators")
     # Socio-Economic Indicators
     emp_var_rate = st.number_input("Emp. Var. Rate", value=-1.8)
     cons_price_idx = st.number_input("Cons. Price Index", value=92.89)
