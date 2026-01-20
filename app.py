@@ -112,9 +112,9 @@ with col2:
     duration = st.number_input("Duration (sec)", min_value=0, value=200, help="Last contact duration in seconds")
     # previous campaign attributes
     campaign = st.number_input("Total Number of Contacts (Current Campaign)", min_value=1, value=1, help="Number of contacts during this campaign (minimum 1)")
-    pdays = st.number_input("Days Since Last Contact (Last Campaign)", min_value=0, value=999, help="999 means never contacted")
-    previous = st.number_input("Total Number of Contacts (Previous Campaigns)", min_value=0, value=0, help="Number of contacts before this campaign")
-    poutcome = st.selectbox("Deposit Outcome of the Last Campaign", ['failure', 'nonexistent', 'success'], index = 1)
+    # pdays = st.number_input("Days Since Last Contact (Last Campaign)", min_value=0, value=999, help="999 means never contacted")
+    # previous = st.number_input("Total Number of Contacts (Previous Campaigns)", min_value=0, value=0, help="Number of contacts before this campaign")
+    # poutcome = st.selectbox("Deposit Outcome of the Last Campaign", ['failure', 'nonexistent', 'success'], index = 1)
 
 with col3:
     st.header("📊 Socio-Economic Indices")
@@ -129,8 +129,8 @@ data = {
     'age': age, 'job': job, 'marital': marital, 'education': education,
     'default': default, 'housing': housing, 'loan': loan,
     'contact': contact, 'month': month, 'day_of_week': day_of_week,
-    'duration': duration, 'campaign': campaign, 'pdays': pdays,
-    'previous': previous, 'poutcome': poutcome,
+    'duration': duration, 'campaign': campaign, 
+    # 'pdays': pdays, 'previous': previous, 'poutcome': poutcome,
     'cons_price_idx': cons_price_idx,
     'cons_conf_idx': cons_conf_idx, 'euribor3m': euribor3m
 }
@@ -148,7 +148,7 @@ if b2.button("🚀 Predict Subscription Probability"):
         try:
             prediction0 = model.predict(df)[0]
             probability = model.predict_proba(df)[0][1]
-            threshold = 0.644665
+            threshold = 0.7544693069918953
             prediction = 1 if probability >= threshold else 0
 
             # Display Results (Centered below button)
