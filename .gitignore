@@ -77,6 +77,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+lgbm_no_duration_runthrough.ipynb
 
 # IPython
 profile_default/
@@ -158,5 +159,5 @@ ehthumbs.db
 Thumbs.db
 
 # Project-specific: data and models
-data/
-model/
+# data/
+# model/
